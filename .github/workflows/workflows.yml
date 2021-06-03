@@ -15,9 +15,7 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - run: mvn -B install --no-transfer-progress --file pom.xml
 
-    name: Deploy
-    environment: production
-    - name: Configure AWS credentials
+    - name: Deploy
       uses: aws-actions/configure-aws-credentials@v1
       with:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
