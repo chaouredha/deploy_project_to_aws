@@ -22,6 +22,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: MyApplicationName
+          application_version: MyApplicationName-${{ github.sha }}
           environment_name: Myapplicationname-env
           version_label: ${{ github.sha }}
           region: ${{ secrets.AWS_REGION }}
