@@ -1,0 +1,15 @@
+---
+server:
+  port : 8090
+
+swagger:
+  apiinfo:
+    title: ${spring.application.name}
+    description: "@project.description@"
+    version: "@project.version@"
+    basePackage: "@project.groupId@"
+
+
+info:
+  app:
+    name: ${spring.application.name}
