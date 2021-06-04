@@ -16,8 +16,10 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - name: Test
         run: mvn clean verify -U
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
       - name: build
-        run: chmod +x ./mvnw compile jib:dockerBuild
+        run: ./mvnw compile jib:dockerBuild
       - name: push
         run: docker push odfsoft/guess-game:latest
 
