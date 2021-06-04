@@ -17,7 +17,7 @@ jobs:
       - name: Test
         run: mvn clean verify -U
       - name: Change wrapper permissions
-        run: chmod +x ./gradlew
+        run: chmod +x ./mvnw
       - name: build
         run: ./mvnw compile jib:dockerBuild
       - name: push
