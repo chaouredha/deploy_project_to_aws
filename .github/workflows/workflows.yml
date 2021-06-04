@@ -17,10 +17,9 @@ jobs:
 
       - uses: actions/checkout@master
       - name: Publish to Docker hub
-        uses: mr-smithers-excellent/docker-build-push@v5
+        uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: chaouredha/deploy-aws
-          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
