@@ -1,5 +1,6 @@
 FROM adoptopenjdk/openjdk11:latest
-COPY target/*.jar app.jar
+
+COPY /home/app/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
 EXPOSE 5000
