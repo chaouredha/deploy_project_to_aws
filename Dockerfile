@@ -1,8 +1,8 @@
 FROM adoptopenjdk/openjdk11:latest
 
-ARG JAR_FILE
+ARG JAR_FILE=target/*.jar
 #RUN test -n "${JAR_FILE}"
-ADD ${JAR_FILE} /app/app.jar
+COPY ${JAR_FILE} app.jar
 
-CMD ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
 
