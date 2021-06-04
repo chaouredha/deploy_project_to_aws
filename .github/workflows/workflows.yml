@@ -16,6 +16,16 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
+
+      - name: Publish to Docker Hub
+          uses: mr-smithers-excellent/docker-build-push@v5
+          with:
+            image: chaouredha/deploy-aws
+            registry: docker.io
+            dockerfile: Dockerfile
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v16
         with:
