@@ -24,7 +24,7 @@ jobs:
           name: chaouredha/deploy-aws
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          tags: "latest,another"
+          tags: "latest,${{ env.STATE_RELEASE_VERSION }}"
 
 
 
