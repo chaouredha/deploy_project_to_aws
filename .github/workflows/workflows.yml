@@ -15,7 +15,7 @@ jobs:
         with:
           java-version: ${{ matrix.java-version }}
       - name: Maven Package
-        run: mvn -B clean compile package -DskipTests
+        run: mvn clean install -DskipTests
 
       - uses: actions/checkout@master
       - name: Publish to Docker hub
