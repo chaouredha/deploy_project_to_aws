@@ -19,7 +19,7 @@ jobs:
 
       - uses: actions/checkout@master
       - name: Publish to Docker hub
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: chaouredha/deploy-aws
           username: ${{ secrets.DOCKER_USERNAME }}
